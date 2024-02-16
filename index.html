@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Web Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1, h2 {
+            color: #333;
+        }
+
+        button {
+            padding: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        #loginBox {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Interactive Web Page</h1>
+
+    <h2>Introduction</h2>
+    <p>This is a sample interactive web page with various functionalities.</p>
+
+    <img src="https://via.placeholder.com/150" alt="Sample Image">
+    
+    <p>Here is a textbox: <input type="text" placeholder="Type something..."></p>
+
+    <div id="loginBox">
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <br>
+
+            <label for="rememberMe">Remember me:</label>
+            <input type="checkbox" id="rememberMe" name="rememberMe">
+            <br>
+
+            <p>Choose a role:</p>
+            <input type="radio" id="admin" name="role" value="admin">
+            <label for="admin">Admin</label>
+
+            <input type="radio" id="user" name="role" value="user">
+            <label for="user">User</label>
+            <br>
+
+            <button type="button" onclick="submitLogin()">Login</button>
+        </form>
+    </div>
+
+    <div id="output"></div>
+
+    <h2>Useful Links</h2>
+    <ul>
+        <li><a href="https://www.example.com">Example Website</a></li>
+        <li><a href="https://www.example2.com">Another Example Website</a></li>
+    </ul>
+
+    <script>
+        function submitLogin() {
+            var username = document.getElementById('username').value;
+            var password = document.getElementById('password').value;
+
+            // Simple validation
+            if (username === '' || password === '') {
+                alert('Please enter both username and password');
+                return;
+            }
+
+            // Display output
+            var outputDiv = document.getElementById('output');
+            outputDiv.innerHTML = '<p><strong>Username:</strong> ' + username + '</p>' +
+                                  '<p><strong>Password:</strong> ' + password + '</p>';
+        }
+    </script>
+
+</body>
+</html>
